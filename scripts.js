@@ -3051,6 +3051,193 @@ var rooms = [
                     "y": "245"
                 }
             }
+        ],
+        "sky_temple_grounds": [
+            {
+                "name": "Defiled Shrine",
+                "item": {
+                    "id": "defiled-shrine",
+                    "original": "Sky Temple Key 8",
+                    "requirements": [
+                        {
+                            "group": [
+                                "Missile Launcher",
+                                "Super Missile",
+                                "Morph Ball Bomb", 
+                                "Dark Beam",
+                                "Light Beam",
+                                "Dark Visor",
+                                "Space Jump Boots"
+                            ]
+                        }
+                    ],
+                    "collected": "false",
+                    "accessible": "false",
+                    "note": "The Dark Missile Trooper does not appear until the Bomb Guardian has been killed.",
+                    "actual": "",
+                    "x": "260",
+                    "y": "815"
+                },
+            },
+            {
+                "name": "Accursed Lake",
+                "item": {
+                    "id": "accursed-lake",
+                    "original": "Sky Temple Key 9",
+                    "requirements": [
+                        {
+                            "group": [
+                                "Dark Beam",
+                                "Light Beam",
+                                "Missile Launcher",
+                                "Seeker Launcher",
+                                "Dark Suit",
+                                "Dark Visor"
+                            ]
+                        }
+                    ],
+                    "collected": "false",
+                    "accessible": "false",
+                    "actual": "",
+                    "x": "660",
+                    "y": "835"
+                },
+                "requirements": []
+            },
+            {
+                "name": "Profane Path",
+                "item": {
+                    "id": "profane-path",
+                    "original": "Beam Ammo Expansion",
+                    "requirements": [
+                        {
+                            "group": [
+                                "Dark Beam",
+                                "Light Beam",
+                                "Annihilator Beam",
+                                "Missile Launcher",
+                                "Space Jump Boots",
+                                "Echo Visor"
+                            ]
+                        }
+                    ],
+                    "collected": "false",
+                    "accessible": "false",
+                    "actual": "",
+                    "x": "405",
+                    "y": "325"
+                }
+            },
+            {
+                "name": "Ing Reliquary",
+                "item": {
+                    "id": "ing-reliquary",
+                    "original": "Sky Temple Key 7",
+                    "requirements": [
+                        {
+                            "group": [
+                                "Dark Beam",
+                                "Light Beam",
+                                "Annihilator Beam",
+                                "Missile Launcher",
+                                "Seeker Launcher",
+                                "Space Jump Boots",
+                                "Grapple Beam",
+                                "Dark Visor",
+                                "Light Suit"
+                            ]
+                        },
+                        {
+                            "group": [
+                                "Dark Beam",
+                                "Light Beam",
+                                "Annihilator Beam",
+                                "Missile Launcher",
+                                "Seeker Launcher",
+                                "Space Jump Boots",
+                                "Screw Attack",
+                                "Dark Visor",
+                                "Light Suit"
+                            ]
+                        }
+                    ],
+                    "collected": "false",
+                    "accessible": "false",
+                    "actual": "",
+                    "x": "595",
+                    "y": "475"
+                }
+            },
+            {
+                "name": "Phazon Grounds",
+                "item": {
+                    "id": "phazon-grounds",
+                    "original": "Missile Expansion",
+                    "requirements": [
+                        {
+                            "group": [
+                                "Dark Beam",
+                                "Light Beam",
+                                "Missile Launcher",
+                                "Space Jump Boots",
+                                "Screw Attack"
+                            ]
+                        }
+                    ],
+                    "collected": "false",
+                    "accessible": "false",
+                    "actual": "",
+                    "x": "525",
+                    "y": "20"
+                }
+            },
+            {
+                "name": "War Ritual Grounds",
+                "item": {
+                    "id": "war-ritual-grounds",
+                    "original": "Missile Expansion",
+                    "requirements": [
+                        {
+                            "group": [
+                                "Dark Beam",
+                                "Light Beam",
+                                "Missile Launcher",
+                                "Space Jump Boots",
+                                "Super Missile",
+                                "Dark Visor",
+                                "Seeker Launcher"
+                            ]
+                        }
+                    ],
+                    "collected": "false",
+                    "accessible": "false",
+                    "actual": "",
+                    "x": "255",
+                    "y": "580"
+                }
+            },
+            {
+                "name": "Plain of Dark Worship",
+                "item": {
+                    "id": "plain-of-dark-worship",
+                    "original": "Missile Expansion",
+                    "requirements": [
+                        {
+                            "group": [
+                                "Dark Beam",
+                                "Light Beam",
+                                "Dark Suit"
+                            ]
+                        }
+                    ],
+                    "note": "You can brute force your way through to this check if you have ample Energy Tanks and possibly also the Boost Ball.",
+                    "collected": "false",
+                    "accessible": "false",
+                    "actual": "",
+                    "x": "565",
+                    "y": "580"
+                }
+            }
         ]
     }
 
@@ -3593,6 +3780,11 @@ $(document).ready(function () {
         }
 
         // DARK AETHER
+        else if (area == "Sky Temple Grounds") {
+            currentArea = rooms[0].sky_temple_grounds;
+            currentGates = gates[0].sky_temple_grounds;
+            $("#map").attr("src", "images/sky_temple_grounds.png");
+        }
 
         else if (area == "Sky Temple") {
             currentArea = rooms[0].sky_temple;
