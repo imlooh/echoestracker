@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts.js"></script>
+    <title>Echoes Rando Tracker</title>
+</head>
+<body><div id="guide-box">
+    <h2>How To Use</h2>
+    <p id="guide-close">close</p>
+    <p>On the map there are white dots where items are, and translators where gates are. The translators present at the start are the original (but actual) colors. E.g. the gate in Meeting Grounds is Violet even though it appears Amber.</p>
+    <h3>Left Click</h3>
+    <ul>
+        <li>On a white item dot, marks it collected (green dot) or undoes this action.</li>
+        <li>On a translator, cycles through the 4 colors, starting at the original color - useful for randomized translators! This will also update any relevant item requirements :)</li>
+        <li>On an arrow, moves across different areas in the same region.</li>
+        <li>On the left menu, the area names will load the respective maps.</li>
+        <li>The transparent icons toggle between collected and not collected.</li>
+    </ul>
+    <h3>Middle Click</h3>
+    <ul>
+        <li>On an item, shows information about that item, including: the room name, its vanilla item, what the actual item is if marked, required items to collect it, and notes (if present).</li>
+    </ul>
+    <h3>Right Click</h3>
+    <ul>
+        <li>On an item dot (white or green), allows you to select an item to mark it on the map. You may then mark it collected (green dot) or undo the action (shows item icon again).</li>
+    </ul>
+</div>
+    <div id="main">
+        <img id="map" src="" />
+        <div id="item-menu">
+            <img class="icon" src="images/Missile Launcher.gif" alt="Missile Launcher" />
+            <img class="icon" src="images/Seeker Launcher.gif" alt="Seeker Launcher" />
+            <img class="icon" src="images/Super Missile.gif" alt="Super Missile" />
+            <img class="icon" src="images/Energy Transfer Module.gif" alt="Energy Transfer Module" />
+            <br />
+
+            <img class="icon" src="images/Morph Ball Bomb.gif" alt="Morph Ball Bomb" abbr="Morph Ball Bombs" />
+            <img class="icon" src="images/Power Bomb.gif" alt="Power Bomb" abbr="Power Bombs" />
+            <img class="icon" src="images/Spider Ball.gif" alt="Spider Ball" abbr="Spider Ball" />
+            <img class="icon" src="images/Boost Ball.gif" alt="Boost Ball" abbr="Boost Ball" />
+            <br />
+
+            <img class="icon" src="images/Dark Beam.gif" alt="Dark Beam" />
+            <img class="icon" src="images/Light Beam.gif" alt="Light Beam" />
+            <img class="icon" src="images/Annihilator Beam.gif" alt="Annihilator Beam" />
+            <img class="icon" src="images/Darkburst.gif" alt="Darkburst" />
+            <img class="icon" src="images/Sunburst.gif" alt="Sunburst" />
+            <img class="icon" src="images/Sonic Boom.gif" alt="Sonic Boom" />
+            <br />
+
+
+            <img class="icon" src="images/Space Jump Boots.gif" alt="Space Jump Boots" />
+            <img class="icon" src="images/Gravity Boost.gif" alt="Gravity Boost" />
+            <img class="icon" src="images/Grapple Beam.gif" alt="Grapple Beam" />
+            <img class="icon" src="images/Screw Attack.gif" alt="Screw Attack" />
+            <img class="icon" src="images/Dark Suit.gif" alt="Dark Suit" />
+            <img class="icon" src="images/Light Suit.gif" alt="Light Suit" />
+            <br />
+            <img class="icon" src="images/Violet Translator.gif" alt="Violet Translator" abbr="Violet Translator" />
+            <img class="icon" src="images/Amber Translator.gif" alt="Amber Translator" abbr="Amber Translator" />
+            <img class="icon" src="images/Emerald Translator.gif" alt="Emerald Translator" abbr="Emerald Translator" />
+            <img class="icon" src="images/Cobalt Translator.gif" alt="Cobalt Translator" abbr="Cobalt Translator" />
+            <img class="icon" src="images/Dark Visor.gif" alt="Dark Visor" abbr="Dark Visor" />
+            <img class="icon" src="images/Echo Visor.gif" alt="Echo Visor" abbr="Echo Visor" />
+            <br />
+
+            <img class="icon" src="images/Missile Expansion.gif" alt="Missile Expansion" />
+            <img class="icon" src="images/Energy Tank.gif" alt="Energy Tank" />
+            <img class="icon" src="images/Power Bomb Expansion.gif" alt="Power Bomb" abbr="Power Expansion" />
+            <img class="icon" src="images/Beam Ammo Expansion.gif" alt="Beam Ammo Expansion" />
+            <img class="icon" src="images/Dark Ammo Expansion.gif" alt="Dark Ammo Expansion" />
+            <img class="icon" src="images/Light Ammo Expansion.gif" alt="Light Ammo Expansion" />
+            <br />
+
+
+            <img class="icon" src="images/Dark Agon Key.gif" alt="Dark Agon Key" />
+            <img class="icon" src="images/Dark Torvus Key.gif" alt="Dark Torvus Key" />
+            <img class="icon" src="images/Ing Hive Key.gif" alt="Ing Hive Key" />
+            <img class="icon" src="images/Sky Temple Key.gif" alt="Sky Temple Key" />
+            <p id="clear">clear</p>
+        </div>
+    </div>
+    <div id="controls">
+        <h2>Light Aether</h2>
+        <ul>
+            <li><a id="tg">Temple Grounds</a></li>
+            <li><a id="gt">Great Temple</a></li>
+            <li><a id="agon">Agon Wastes</a></li>
+            <li><a id="torvus">Torvus Bog</a></li>
+            <li><a id="sanc">Sanctuary Fortress</a></li>
+        </ul>
+        <h2>Dark Aether</h2>
+        <ul>
+            <li><a id="stg">Sky Temple Grounds</a></li>
+            <li><a id="sky">Sky Temple</a></li>
+            <li><a id="dark-agon">Dark Agon Wastes</a></li>
+            <li><a id="dark-torvus">Dark Torvus Bog</a></li>
+            <li><a id="ing-hive">Ing Hive</a></li>
+        </ul>
+        <h2>Items</h2>
+        <img class="icon" src="images/Missile Launcher.gif" alt="Missile Launcher" />
+        <img class="icon" src="images/Seeker Launcher.gif" alt="Seeker Launcher" />
+        <img class="icon" src="images/Super Missile.gif" alt="Super Missile" />
+        <img class="icon" src="images/Energy Transfer Module.gif" alt="Energy Transfer Module" />
+        <br />
+
+        <img class="icon" src="images/Morph Ball Bomb.gif" alt="Morph Ball Bomb" abbr="Morph Ball Bombs" />
+        <img class="icon" src="images/Power Bomb.gif" alt="Power Bomb" abbr="Power Bombs" />
+        <img class="icon" src="images/Spider Ball.gif" alt="Spider Ball" abbr="Spider Ball" />
+        <img class="icon" src="images/Boost Ball.gif" alt="Boost Ball" abbr="Boost Ball" />
+        <br />
+
+        <img class="icon" src="images/Dark Beam.gif" alt="Dark Beam" />
+        <img class="icon" src="images/Light Beam.gif" alt="Light Beam" />
+        <img class="icon" src="images/Annihilator Beam.gif" alt="Annihilator Beam" />
+        <img class="icon" src="images/Darkburst.gif" alt="Darkburst" />
+        <img class="icon" src="images/Sunburst.gif" alt="Sunburst" />
+        <img class="icon" src="images/Sonic Boom.gif" alt="Sonic Boom" />
+        <br />
+
+
+        <img class="icon" src="images/Space Jump Boots.gif" alt="Space Jump Boots" />
+        <img class="icon" src="images/Gravity Boost.gif" alt="Gravity Boost" />
+        <img class="icon" src="images/Grapple Beam.gif" alt="Grapple Beam" />
+        <img class="icon" src="images/Screw Attack.gif" alt="Screw Attack" />
+        <img class="icon" src="images/Dark Suit.gif" alt="Dark Suit" />
+        <img class="icon" src="images/Light Suit.gif" alt="Light Suit" />
+        <br />
+        <img class="icon" src="images/Violet Translator.gif" alt="Violet Translator" abbr="Violet Translator" />
+        <img class="icon" src="images/Amber Translator.gif" alt="Amber Translator" abbr="Amber Translator" />
+        <img class="icon" src="images/Emerald Translator.gif" alt="Emerald Translator" abbr="Emerald Translator" />
+        <img class="icon" src="images/Cobalt Translator.gif" alt="Cobalt Translator" abbr="Cobalt Translator" />
+        <img class="icon" src="images/Dark Visor.gif" alt="Dark Visor" abbr="Dark Visor" />
+        <img class="icon" src="images/Echo Visor.gif" alt="Echo Visor" abbr="Echo Visor" />
+        <br />
+
+        <img class="icon" src="images/Dark Agon Key.gif" alt="Dark Agon Key" />
+        <img class="icon" src="images/Dark Agon Key.gif" alt="Dark Agon Key" />
+        <img class="icon" src="images/Dark Agon Key.gif" alt="Dark Agon Key" />
+
+        <img class="icon" src="images/Dark Torvus Key.gif" alt="Dark Torvus Key" />
+        <img class="icon" src="images/Dark Torvus Key.gif" alt="Dark Torvus Key" />
+        <img class="icon" src="images/Dark Torvus Key.gif" alt="Dark Torvus Key" />
+        <br />
+
+        <img class="icon" src="images/Ing Hive Key.gif" alt="Ing Hive Key" />
+        <img class="icon" src="images/Ing Hive Key.gif" alt="Ing Hive Key" />
+        <img class="icon" src="images/Ing Hive Key.gif" alt="Ing Hive Key" />
+
+        <img class="icon" src="images/Sky Temple Key.gif" alt="Sky Temple Key" />
+        <img class="icon" src="images/Sky Temple Key.gif" alt="Sky Temple Key" />
+        <img class="icon" src="images/Sky Temple Key.gif" alt="Sky Temple Key" />
+
+        <br />
+
+        <img class="icon" src="images/Sky Temple Key.gif" alt="Sky Temple Key" />
+        <img class="icon" src="images/Sky Temple Key.gif" alt="Sky Temple Key" />
+        <img class="icon" src="images/Sky Temple Key.gif" alt="Sky Temple Key" />
+        <img class="icon" src="images/Sky Temple Key.gif" alt="Sky Temple Key" />
+        <img class="icon" src="images/Sky Temple Key.gif" alt="Sky Temple Key" />
+        <img class="icon" src="images/Sky Temple Key.gif" alt="Sky Temple Key" />
+
+        <h2>About</h2>
+        <p>A Metroid Prime 2: Echoes randomizer map-based item tracker for <a href="https://github.com/randovania/randovania">Randovania</a>.</p>
+        <p>Map coded by Leah Hicks. Original maps by <a href="https://metroid.retropixel.net/games/mprime2/maps.php">retropixel.net</a>. Item sprites from <a href="https://www.spriters-resource.com/custom_edited/metroidcustoms/sheet/23198/">Spriters' Resource.</a></p>
+        <p><a href="#" id="guide">Click here for controls.</a></p>
+        
+    </div>
+
+    
+</body>
+</html>

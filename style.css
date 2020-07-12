@@ -1,0 +1,133 @@
+﻿body {
+    background-color: black;
+}
+
+#main {
+    width: 1000px;
+    height: 800px;
+    margin: 0 auto;
+}
+
+#main img {
+    position: fixed;
+}
+
+
+
+#item-menu {
+    position: absolute;
+    display: none;
+    width: 300px;
+    height: 350px;
+    border: 1px solid white;
+    background-color: black;
+    padding: 10px;
+    z-index: 30;
+}
+
+#item-menu img.icon {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    padding: 5px;
+    display: inline;
+}
+
+#main img.item, #main img.gate {
+    z-index: 2;
+}
+
+#main img.item:hover, #main img.gate:hover, #main img.nav:hover {
+    cursor: grab;
+}
+
+#controls {
+    color: white;
+    font-family: "Segoe UI";
+    float: left;
+    width: 250px;
+    height: 350px;
+    position: fixed;
+
+    margin-top: -800px;
+    margin-left: 50px;
+}
+
+#original-name {
+    color: white;
+    position: fixed;
+    margin-left: 1500px;
+    z-index: 30;
+    background-color: black;
+    font-family: Segoe UI;
+    min-width: 220px;
+    min-height: 160px;
+    padding: 5px;
+    border: 1px solid white;
+    text-align: center;
+    padding: 10px;
+}
+
+#original-name h2 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+#original-name li {
+    line-height: 40px;
+}
+
+#original-name p {
+    width: inherit;
+    margin: 0 auto;
+    text-align:justify;
+}
+
+#original-name img {
+    line-height: 80px;
+}
+
+#clear {
+    color: white;
+    font-family: 'Segoe UI';
+    margin-top: -350px;
+    margin-left: 250px;
+}
+
+#controls img.icon {
+    width: 36px;
+    height: 36px;
+    opacity: 0.25;
+}
+
+#controls p {
+    font-size: 10px;
+}
+
+
+#requirements  {
+    float: left;
+}
+
+#req:hover {
+    cursor: help;
+}
+
+#guide-box {
+    display: none;
+    position: fixed;
+    margin-top: 20px;
+    margin-left: 600px;
+    font-family: "Segoe UI";
+    color: white;
+    border: 1px solid white;
+    padding: 10px;
+    width: 500px;
+    z-index: 31;
+    background-color: black;
+}
+
+#guide-close {
+    margin-top: -75px;
+    float: right;
+}
